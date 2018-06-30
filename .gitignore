@@ -1,0 +1,3 @@
+furydeck/db.sqlite3
+*.pyc
+venv/

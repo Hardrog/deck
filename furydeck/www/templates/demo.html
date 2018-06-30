@@ -1,0 +1,39 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+     <link href="{% static 'css/app.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Connected lists -->
+	<div class="container" style="height: 520px">
+		<div data-force="30" class="layer block" style="left: 14.5%; top: 0; width: 37%">
+			<div class="layer title">Collection</div>
+			<ul id="foo" class="block__list block__list_words">
+				{% for card in cards %}
+                <li>
+                {{card.name}}<br/>
+                <img src="{{ card.img.url }}" style="width:80px;">
+                </li>
+                {% endfor %}
+			</ul>
+		</div>
+
+		<div data-force="18" class="layer block" style="left: 58%; top: 143px; width: 40%;">
+			<div class="layer title">Deck</div>
+			<ul id="bar" class="block__list block__list_tags">
+
+			</ul>
+		</div>
+	</div>
+
+    <script type="text/javascript" src="{% static 'js/Sortable.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
